@@ -6,10 +6,6 @@ import 'package:flutter/material.dart';
 import '../widgets/task_add_widget.dart';
 import 'create_task_page.dart';
 
-void main() {
-  runApp(MyApp());
-}
-
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
