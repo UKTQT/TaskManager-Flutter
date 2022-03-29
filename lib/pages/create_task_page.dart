@@ -57,7 +57,13 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 controller: titleController,
                 obscureText: false,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 5.0)),
                   labelText: 'Başlık',
                 ),
               ),
@@ -69,7 +75,13 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 controller: taskController,
                 obscureText: false,
                 decoration: InputDecoration(
-                  border: OutlineInputBorder(),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 5.0)),
                   labelText: 'Görev',
                 ),
               ),
@@ -81,12 +93,15 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 onTap: () {
                   _selectedDatee(context);
                 },
-                child: TextField(
+                child: TextFormField(
                   controller: dateController,
                   enabled: false,
                   decoration: InputDecoration(
                     suffixIcon: Icon(Icons.date_range),
-                    border: OutlineInputBorder(),
+                    disabledBorder: OutlineInputBorder(
+                      borderSide:
+                          BorderSide(color: Colors.deepPurple, width: 3.0),
+                    ),
                     labelText: '${_selectedDate.toString()}',
                   ),
                 ),
@@ -100,6 +115,8 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                       child: Padding(
                     padding: const EdgeInsets.only(left: 20.0, right: 10.0),
                     child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Color(0xFFff281d)),
                         onPressed: () {
                           Navigator.pop(context);
                         },

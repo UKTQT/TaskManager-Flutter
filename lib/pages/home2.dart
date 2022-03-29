@@ -2,6 +2,7 @@ import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 import '../widgets/task_add_widget.dart';
 import 'create_task_page.dart';
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.deepPurple,
       ),
       home: MyHomePage(),
     );
@@ -91,9 +92,146 @@ class _MyHomePageState extends State<MyHomePage> {
                 },
               ),
             ),
-            Text(_selectedValue.toString()),
-            SizedBox(height: 200.0),
-            //taskAddWidget(),
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: Text(_selectedValue.toString()),
+            ),
+            GestureDetector(
+              onTap: () {
+                tikla();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 16.0, right: 16.0, bottom: 20.0),
+                child: Container(
+                  color: Colors.deepPurple,
+                  child: Slidable(
+                    key: const ValueKey(0),
+                    startActionPane: ActionPane(
+                      motion: const StretchMotion(),
+                      dismissible: DismissiblePane(onDismissed: () {}),
+                      children: const [
+                        SlidableAction(
+                          onPressed: sil,
+                          backgroundColor: Color(0xFFff281d),
+                          foregroundColor: Colors.white,
+                          icon: Icons.delete,
+                          label: 'Görevi Sil',
+                        ),
+                      ],
+                    ),
+                    endActionPane: const ActionPane(
+                      motion: ScrollMotion(),
+                      children: [
+                        SlidableAction(
+                          // An action can be bigger than the others.
+                          flex: 2,
+                          onPressed: okundu,
+                          backgroundColor: Color(0xFF7BC043),
+                          foregroundColor: Colors.white,
+                          icon: Icons.archive,
+                          label: 'Yapıldı Olarak İşaretle',
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.note,
+                          color: Colors.white,
+                          size: 28.0,
+                        ),
+                        title: Text(
+                          'Slide me',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          'Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.',
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.history_toggle_off,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            GestureDetector(
+              onTap: () {
+                tikla();
+              },
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    left: 16.0, right: 16.0, bottom: 20.0),
+                child: Container(
+                  color: Color(0xff455a64),
+                  child: Slidable(
+                    key: const ValueKey(0),
+                    startActionPane: ActionPane(
+                      motion: const StretchMotion(),
+                      dismissible: DismissiblePane(onDismissed: () {}),
+                      children: const [
+                        SlidableAction(
+                          onPressed: sil,
+                          backgroundColor: Color(0xFFff281d),
+                          foregroundColor: Colors.white,
+                          icon: Icons.delete,
+                          label: 'Görevi Sil',
+                        ),
+                      ],
+                    ),
+                    endActionPane: const ActionPane(
+                      motion: ScrollMotion(),
+                      children: [
+                        SlidableAction(
+                          // An action can be bigger than the others.
+                          flex: 2,
+                          onPressed: okundu,
+                          backgroundColor: Color(0xFF7BC043),
+                          foregroundColor: Colors.white,
+                          icon: Icons.archive,
+                          label: 'Yapıldı Olarak İşaretle',
+                        ),
+                      ],
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: const ListTile(
+                        leading: Icon(
+                          Icons.note,
+                          color: Colors.white,
+                          size: 28.0,
+                        ),
+                        title: Text(
+                          'Slide me',
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.bold),
+                        ),
+                        subtitle: Text(
+                          'Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır metinlerdir.',
+                          style: TextStyle(
+                            color: Colors.white70,
+                          ),
+                        ),
+                        trailing: Icon(
+                          Icons.check,
+                          color: Colors.white,
+                          size: 30.0,
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -108,54 +246,16 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     );
   }
+}
 
-  _dismissDialog() {
-    Navigator.pop(context);
-  }
+void sil(BuildContext context) {
+  print('silindi');
+}
 
-  void _showSimpleDialog() {
-    showDialog(
-        context: context,
-        builder: (context) {
-          return SimpleDialog(
-            title: Text('Yeni Görev Ekle'),
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    labelText: 'Başlık',
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: TextFormField(
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    border: UnderlineInputBorder(),
-                    labelText: 'Görev',
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: InputDatePickerFormField(
-                    autofocus: false,
-                    fieldLabelText: 'Tarih',
-                    initialDate: DateTime.now(),
-                    firstDate: DateTime(2020),
-                    lastDate: DateTime(2030)),
-              ),
-              TextButton(
-                  onPressed: () {
-                    _dismissDialog();
-                  },
-                  child: Text('Close')),
-            ],
-          );
-        });
-  }
+void okundu(BuildContext context) {
+  print('okundu');
+}
+
+tikla() {
+  print('tikla');
 }
