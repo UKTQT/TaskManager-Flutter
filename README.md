@@ -22,6 +22,18 @@ Life Manager project was written to gain more experience in flutter, It is a tas
 
 </br>
 
+## Project Package
+
+#### date_picker_timeline
+#### cloud_firestore
+#### firebase_core
+#### intl
+#### flutter_slidable
+#### localization
+
+
+</br>
+
 ## Using
 
 
