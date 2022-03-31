@@ -76,10 +76,10 @@ Using http in the project, data was retrieved from the Weather API on the https:
      <td><img src="https://user-images.githubusercontent.com/17275354/161055339-996696db-8db4-4673-a0c5-cadbe01b1a94.jpg" width="350" title="hover text"></td>
   </tr>
    <tr>
-     <td><img src="" width="350" title="hover text"></td>
-    <td><img src="" width="350" title="hover text"></td>
-    <td><img src="" width="350" title="hover text"></td>
-     <td><img src="" width="350" title="hover text"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055580-d4cf7e3b-68cf-4531-87b8-c7b82e9de383.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055601-91ff76dd-d162-43a9-b738-52fdcacbae2c.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055617-8b176756-a117-45fe-b1b7-0a99438bfe24.jpg" width="350" title="hover text"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055670-0b965569-5d4d-459d-becd-378b36c89388.gif" width="350" title="hover text"></td>
   </tr>
   
   
