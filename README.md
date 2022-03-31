@@ -3,10 +3,11 @@
 ## Project Description
 
 ### Tr
-Projede http kullanılarak, https://collectapi.com sitesindeki Hava Durumu API'sinden veri çekilmiştir. 5 günlük hava durumu verisi Tabbar kullanılarak ekrana çizilmiştir. Ayarlar sayfasından şehir ve veri dili ayarı yapılabilmektedir fakat şuan o kısmın arkaplanı çalışmıyor. En yakın zamanda eklenecektir.
+Hayat Yöneticisi projesi, flutter'da daha fazla tecrübe kazanmak amacıyla yazılmış, istediğiniz güne görev ekleyebildiğiniz, görevi tamamlandı olarak işaretleyebildiğiniz bir görev yöneticisi uygulamasıdır. İçeriğinde firebase veritabanı ve tarih kullanımı için date_picker_timeline paketi kullanışmıştır. 
 </br>
 ### En
-Using http in the project, data was retrieved from the Weather API on the https://collectapi.com site. 5 days of weather data is drawn on the screen using Tabbar. City and data language settings can be made from the settings page, but the background of that section is not working now. It will be added as soon as possible.
+Life Manager project was written to gain more experience in flutter, It is a task manager application where you can add tasks to the day you want, mark the task as completed. The date_picker_timeline package is used for firebase database and date usage in its content.
+
 
 
 
@@ -14,8 +15,8 @@ Using http in the project, data was retrieved from the Weather API on the https:
 
 ## Project Feature
 
-#### Flutter Http Service ✓
-#### Responsive Screen ✖
+#### Flutter Firebase Service ✓
+#### Responsive Screen ✓
 #### Clean Code ✓
 
 
