@@ -59,22 +59,6 @@ Life Manager project was written to gain more experience in flutter, It is a tas
    $ import 'package:localization/localization.dart';
 ```
 
-#### Register on collectapi.com and get an api key from the weather api for free.
-
-```js
-
-   var response = await http.get(
-        Uri.parse(
-            'https://api.collectapi.com/weather/getWeather?data.lang=tr&data.city=eskişehir'), //Paste Weather Api url
-        headers: {
-          'content-type': 'application/json',
-          'authorization':
-              'apikey .........................' //Paste Weather Api apikey
-        });
-        
-```
-
-
 
 </br>
 
