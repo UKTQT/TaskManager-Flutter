@@ -49,7 +49,14 @@ Life Manager project was written to gain more experience in flutter, It is a tas
 
 #### Import it. Now in your Dart code, you can use:
 ```js
-   $ import 'package:http/http.dart';        
+   $ import 'package:cloud_firestore/cloud_firestore.dart';  
+   $ import 'package:firebase_core/firebase_core.dart';
+   $ import 'package:date_picker_timeline/date_picker_timeline.dart';
+   $ import 'package:flutter_localizations/flutter_localizations.dart'; 
+   $ import 'package:flutter_slidable/flutter_slidable.dart'; 
+   $ import 'package:intl/intl.dart';
+   $ import 'package:intl/date_symbol_data_local.dart';
+   $ import 'package:localization/localization.dart';
 ```
 
 #### Register on collectapi.com and get an api key from the weather api for free.
