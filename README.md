@@ -61,16 +61,16 @@ Life Manager project was written to gain more experience in flutter, It is a tas
 
 #### Basic database design:
 ```js
-   $ {
-   "task":{
-    "GMSgnUFEdrOkEH81lKcf" : {
-      "date" : "31/03/2022",
-      "finished" : true,
-      "task" : "Görev İçeriği",
-      "title" : "Görev Başlığı"
-    },
-  }
-}
+   {
+      "task":{
+       "GMSgnUFEdrOkEH81lKcf" : {
+         "date" : "31/03/2022",
+         "finished" : true,
+         "task" : "Görev İçeriği",
+         "title" : "Görev Başlığı"
+       },
+     }
+   }
 ```
 
 </br>
