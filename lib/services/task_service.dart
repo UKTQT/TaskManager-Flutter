@@ -22,4 +22,22 @@ class TaskService {
         date: date,
         finished: finished);
   }
+
+  Stream<QuerySnapshot> getTask(String queryDate) {
+    var ref = _firestore
+        .collection('task')
+        .where('date', isEqualTo: queryDate)
+        .snapshots();
+    return ref;
+  }
+
+  updateTask(String docId) {
+    var ref = _firestore.collection('task').doc(docId).update({
+      'finished': true,
+    });
+  }
+
+  removeTask(String docId) {
+    var ref = _firestore.collection('task').doc(docId).delete();
+  }
 }

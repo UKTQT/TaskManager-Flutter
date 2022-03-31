@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:task_manager/services/task_service.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import '../services/task_service.dart';
+import '../ui/helper/color_helper.dart';
+import '../ui/helper/text_helper.dart';
+import '../ui/helper/icon_helper.dart';
 
 class CreateTaskPage extends StatefulWidget {
   const CreateTaskPage({Key? key}) : super(key: key);
@@ -18,7 +22,7 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
   final taskController = TextEditingController();
   final dateController = TextEditingController();
 
-  String _selectedDate = DateFormat.yMd().format(DateTime.now());
+  String _selectedDate = DateFormat('dd-MM-yyyy').format(DateTime.now());
   final String _startDate = DateFormat('hh:mm a').format(DateTime.now());
   final String _endDate =
       DateFormat('hh:mm a').format(DateTime.now().add(Duration(minutes: 15)));
@@ -41,11 +45,11 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: const [
                   Text(
-                    'Yeni Görev',
+                    TextHelper.title4,
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22.0,
-                        color: Colors.black87),
+                        color: ColorHelper.colorBlack),
                   ),
                 ],
               ),
@@ -56,15 +60,15 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
               child: TextFormField(
                 controller: titleController,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: ColorHelper.themeColor, width: 3.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.deepPurple, width: 5.0)),
-                  labelText: 'Başlık',
+                      borderSide: BorderSide(
+                          color: ColorHelper.themeColor, width: 5.0)),
+                  labelText: TextHelper.inputTitleText,
                 ),
               ),
             ),
@@ -74,15 +78,15 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
               child: TextFormField(
                 controller: taskController,
                 obscureText: false,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   enabledBorder: OutlineInputBorder(
                     borderSide:
-                        BorderSide(color: Colors.deepPurple, width: 3.0),
+                        BorderSide(color: ColorHelper.themeColor, width: 3.0),
                   ),
                   focusedBorder: OutlineInputBorder(
-                      borderSide:
-                          BorderSide(color: Colors.deepPurple, width: 5.0)),
-                  labelText: 'Görev',
+                      borderSide: BorderSide(
+                          color: ColorHelper.themeColor, width: 5.0)),
+                  labelText: TextHelper.inputTaskText,
                 ),
               ),
             ),
@@ -97,10 +101,10 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                   controller: dateController,
                   enabled: false,
                   decoration: InputDecoration(
-                    suffixIcon: Icon(Icons.date_range),
-                    disabledBorder: OutlineInputBorder(
+                    suffixIcon: IconHelper.taskDateIcon2,
+                    disabledBorder: const OutlineInputBorder(
                       borderSide:
-                          BorderSide(color: Colors.deepPurple, width: 3.0),
+                          BorderSide(color: ColorHelper.themeColor, width: 3.0),
                     ),
                     labelText: '${_selectedDate.toString()}',
                   ),
@@ -116,11 +120,11 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                     padding: const EdgeInsets.only(left: 20.0, right: 10.0),
                     child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                            primary: Color(0xFFff281d)),
+                            primary: ColorHelper.colorRed),
                         onPressed: () {
                           Navigator.pop(context);
                         },
-                        child: Text('İptal')),
+                        child: const Text(TextHelper.taskCancelBtnText)),
                   )),
                   Expanded(
                       child: Padding(
@@ -131,37 +135,42 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
                             ScaffoldMessenger.of(context).showSnackBar(
                               SnackBar(
                                   content:
-                                      const Text('Başlık Alanı Boş Geçilemez'),
+                                      const Text(TextHelper.inputTitleNullText),
                                   action: SnackBarAction(
-                                      label: 'Anladım', onPressed: () {})),
+                                      label: TextHelper.inputNullUnderstandText,
+                                      onPressed: () {})),
                             );
                           } else {
                             if (taskController.text == '') {
                               ScaffoldMessenger.of(context).showSnackBar(
                                 SnackBar(
-                                    content:
-                                        const Text('Görev Alanı Boş Geçilemez'),
+                                    content: const Text(
+                                        TextHelper.inputTaskNullText),
                                     action: SnackBarAction(
-                                        label: 'Anladım', onPressed: () {})),
+                                        label:
+                                            TextHelper.inputNullUnderstandText,
+                                        onPressed: () {})),
                               );
                             } else {
                               try {
                                 var result = _taskService.addNewTask(
                                     titleController.text,
                                     taskController.text,
-                                    _selectedDate.toString(),
+                                    _selectedDate
+                                        .toString()
+                                        .replaceAll('-', '/'),
                                     false);
                                 Navigator.pop(context);
                               } catch (e) {
-                                AlertDialog(
+                                const AlertDialog(
                                   title: Text(
-                                      'Görev eklenemedi, internet bağlantınızı kontrol ediniz.'),
+                                      TextHelper.internetConnectionErrorText),
                                 );
                               }
                             }
                           }
                         },
-                        child: Text('Görevi Ekle')),
+                        child: const Text(TextHelper.taskAddBtnText)),
                   )),
                 ],
               ),
@@ -174,16 +183,18 @@ class _CreateTaskPageState extends State<CreateTaskPage> {
 
   _selectedDatee(BuildContext context) async {
     final DateTime? selected = await showDatePicker(
+        locale: const Locale('tr', 'TR'),
         context: context,
         initialDate: DateTime.now(),
-        firstDate: DateTime(2020),
+        firstDate: DateTime.now(),
         lastDate: DateTime(2030));
 
     setState(() {
       if (selected != null) {
-        _selectedDate = DateFormat.yMd().format(selected).toString();
+        _selectedDate = DateFormat('dd-MM-yyyy').format(selected).toString();
       } else {
-        _selectedDate = DateFormat.yMd().format(DateTime.now()).toString();
+        _selectedDate =
+            DateFormat('dd-MM-yyyy').format(DateTime.now()).toString();
       }
     });
   }
