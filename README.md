@@ -64,9 +64,22 @@ Using http in the project, data was retrieved from the Weather API on the https:
      <td><img src="https://user-images.githubusercontent.com/17275354/161055015-42432b81-db70-4acd-a5e6-2c1f669e4e67.jpg" width="350" title="hover text"></td>
   </tr>
   <tr>
-    <td><img src="https://user-images.githubusercontent.com/17275354/158071728-7631c6f1-fe11-4d56-867b-79c3a5e1ff3b.png" width="350" title="hover text"></td>
-    <td><img src="https://user-images.githubusercontent.com/17275354/158071736-d2263332-bd5d-4f4a-9b0b-7d7c332647ba.png" width="350" title="hover text"></td>
-    <td><img src="https://user-images.githubusercontent.com/17275354/158071741-a27be32d-eff6-4eb0-94b6-fe809f597e8f.png" width="350" title="hover text"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055183-f27d1084-ff17-4c9b-8f97-bed30836b477.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055200-dc63730c-726f-4a7a-bef5-669afd8a6a61.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055224-29336d49-7b66-4c8d-b7d3-035c32658a87.jpg" width="350" title="hover text"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055234-77560f2f-2097-4931-9859-e306b6647c4f.jpg" width="350" title="hover text"></td>
+  </tr>
+   <tr>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055263-bae82b5e-6932-445b-825a-3b5c7f15f852.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055291-3a7548b5-b742-4d6b-acb1-1aacdb03758c.jpg" width="350" title="hover text"></td>
+    <td><img src="https://user-images.githubusercontent.com/17275354/161055309-b7afa8a4-873e-4e8e-86c3-94faafb537f3.jpg" width="350" title="hover text"></td>
+     <td><img src="https://user-images.githubusercontent.com/17275354/161055339-996696db-8db4-4673-a0c5-cadbe01b1a94.jpg" width="350" title="hover text"></td>
+  </tr>
+   <tr>
+     <td><img src="" width="350" title="hover text"></td>
+    <td><img src="" width="350" title="hover text"></td>
+    <td><img src="" width="350" title="hover text"></td>
+     <td><img src="" width="350" title="hover text"></td>
   </tr>
   
   
