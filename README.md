@@ -37,14 +37,9 @@ Life Manager project was written to gain more experience in flutter, It is a tas
 ## Using
 
 
-#### Use http package as a library
+#### Use package as a library
 ```js
-   $ flutter pub add firebase_core  
-   $ flutter pub add cloud_firestore  
-   $ flutter pub add intl 
-   $ flutter pub add date_picker_timeline  
-   $ flutter pub add flutter_slidable
-   $ flutter pub add localization
+   $ flutter packages get
 ```
 
 #### Import it. Now in your Dart code, you can use:
