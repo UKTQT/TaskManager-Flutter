@@ -3,7 +3,7 @@
 ## Project Status ( Suspended )
 <table>
    <tr>
-     <td><div style="width:100%;height:0;padding-bottom:67%;position:relative;"><iframe src="https://giphy.com/embed/ZR8teuiCs3AkSkzjnG" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/justin-squid-game-squidgame-time-passing-ZR8teuiCs3AkSkzjnG">via GIPHY</a></p></td>
+     <td><img src="[https://user-images.githubusercontent.com/17275354/161054793-b19c1c94-02d5-402c-9827-8ea27f748af7.gif](https://giphy.com/embed/ZR8teuiCs3AkSkzjnG)" width="350" title="hover text"></td>
    </tr>
 </table>
 
