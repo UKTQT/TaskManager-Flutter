@@ -3,7 +3,7 @@
 ## Project Status ( Suspended )
 <table>
    <tr>
-     <td><img src="[https://user-images.githubusercontent.com/17275354/161054793-b19c1c94-02d5-402c-9827-8ea27f748af7.gif](https://giphy.com/embed/ZR8teuiCs3AkSkzjnG)" width="350" title="hover text"></td>
+     <td><img src="https://giphy.com/embed/ZR8teuiCs3AkSkzjnG" width="350" title="hover text"></td>
    </tr>
 </table>
 
