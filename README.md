@@ -1,6 +1,6 @@
 # To-Do App - Dart / Flutter
 
-## Project Status ( Suspended )
+## Project Status ( Suspended - Askıya Alındı)
 
 <table>
   <tr>
